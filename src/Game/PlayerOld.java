@@ -1,7 +1,8 @@
+
 package Game;
 
 public class PlayerOld {
-
+/*
     private String name;
     private String spilBrik;
     private String ejendomme;
@@ -89,4 +90,5 @@ public class PlayerOld {
                 ", position=" + position +
                 '}';
     }
+    */
 }

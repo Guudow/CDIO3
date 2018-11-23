@@ -38,6 +38,12 @@ public class GameBoard {
 
     public String toString(Field[] fieldArray)
     {
+        String str = new String();
 
+        for (int i = 0; i < fieldArray.length; i++)
+        {
+            str += fieldArray[i].toString() + "\n";
+        }
+        return str;
     }
 }

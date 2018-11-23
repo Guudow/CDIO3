@@ -3,11 +3,14 @@ package Game;
 public class Player {
 
     private int position;
+    private int playerNumber;
     private Account account;
 
-    public Player(int numPlayers)
+    public Player(int numPlayers, int playerNumber)
     {
         position = 0;
+        this.playerNumber = playerNumber;
+        account = new Account();
 
         if (numPlayers == 2)
         {

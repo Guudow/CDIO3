@@ -29,6 +29,11 @@ public class Field {
         this.isJail = isJail;
     }
 
+    public boolean isPurchaseable()
+    {
+        return isPurchaseable;
+    }
+
     public void purchaseProperty(boolean owned)
     {
         this.owned = owned;
@@ -37,5 +42,10 @@ public class Field {
     public int getPrice()
     {
         return price;
+    }
+
+    public String toString()
+    {
+        return "...";
     }
 }

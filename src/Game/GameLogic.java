@@ -9,4 +9,18 @@ public class GameLogic {
         int result = dice.roll();
         return result;
     }
+
+    /*
+    public boolean isOwned(Field field)
+    {
+
+    }
+*/
+    public void purchaseProperty(Field field)
+    {
+        if (field.isPurchaseable() == true)
+        {
+            field.purchaseProperty(true);
+        }
+    }
 }
