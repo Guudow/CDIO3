@@ -36,6 +36,8 @@ public class GameBoard {
 
     }
 
+
+
     public String toString(Field[] fieldArray)
     {
         String str = new String();
