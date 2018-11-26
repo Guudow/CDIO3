@@ -46,6 +46,6 @@ public class Field {
 
     public String toString()
     {
-        return "...";
+        return name + ", " + price + ", " + isJail + ", " + isChance + ", " + owned + ", " + isPurchaseable;
     }
 }
