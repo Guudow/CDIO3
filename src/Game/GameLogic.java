@@ -19,7 +19,7 @@ public class GameLogic {
 */
     public void purchaseProperty(Field field)
     {
-        if (field.isPurchaseable() == true)
+        if (field.isPurchaseable())
         {
             field.purchaseProperty(true);
         }
