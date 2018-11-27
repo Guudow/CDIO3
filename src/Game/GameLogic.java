@@ -8,7 +8,7 @@ public class GameLogic {
     {
         int result = dice.roll();
         player.setPosition(result);
-        return result;
+        return player.getPosition();
     }
 
     /*
