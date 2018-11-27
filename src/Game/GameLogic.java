@@ -17,11 +17,12 @@ public class GameLogic {
 
     }
 */
-    public void purchaseProperty(Field field)
+    public void purchaseProperty(Field field, Player player)
     {
         if (field.isPurchaseable())
         {
             field.purchaseProperty(true);
+            player.setMoney(-field.getPrice());
         }
     }
 }
