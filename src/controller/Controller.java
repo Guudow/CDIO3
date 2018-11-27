@@ -8,7 +8,7 @@ import java.awt.*;
 
 public class Controller {
 
-    public void initializeGUI()
+    public void initializeGUI(int numPlayers)
     {
         GUI_Field[] fields = new GUI_Field[24];
 
@@ -40,12 +40,27 @@ public class Controller {
         GUI gui = new GUI(fields);
 
 
-        GUI_Car car1 = new GUI_Car(Color.red, Color.black, GUI_Car.Type.CAR, GUI_Car.Pattern.HORIZONTAL_GRADIANT);
-        GUI_Player player1 = new GUI_Player("Spiller 1", 20, car1);
-        gui.addPlayer(player1);
+        if (numPlayers == 2)
+        {
+            GUI_Car car1 = new GUI_Car(Color.red, Color.black, GUI_Car.Type.CAR, GUI_Car.Pattern.HORIZONTAL_GRADIANT);
+            GUI_Player player1 = new GUI_Player("Spiller 1", 20, car1);
+            gui.addPlayer(player1);
 
-        GUI_Car car2 = new GUI_Car(Color.blue, Color.white, GUI_Car.Type.RACECAR, GUI_Car.Pattern.DIAGONAL_DUAL_COLOR);
-        GUI_Player player2 = new GUI_Player("Spiller 2", 20, car2);
-        gui.addPlayer(player2);
+            GUI_Car car2 = new GUI_Car(Color.blue, Color.white, GUI_Car.Type.RACECAR, GUI_Car.Pattern.DIAGONAL_DUAL_COLOR);
+            GUI_Player player2 = new GUI_Player("Spiller 2", 20, car2);
+            gui.addPlayer(player2);
+        }
+        else if (numPlayers == 3)
+        {
+            GUI_Car car3 = new GUI_Car(Color.yellow, Color.magenta, GUI_Car.Type.UFO, GUI_Car.Pattern.ZEBRA);
+            GUI_Player player3 = new GUI_Player("Spiller 3", 20, car3);
+            gui.addPlayer(player3);
+        }
+        else if (numPlayers == 4)
+        {
+            GUI_Car car4 = new GUI_Car(Color.green, Color.red, GUI_Car.Type.TRACTOR, GUI_Car.Pattern.HORIZONTAL_LINE);
+            GUI_Player player4 = new GUI_Player("Spiller 4", 20, car4);
+            gui.addPlayer(player4);
+        }
     }
 }
