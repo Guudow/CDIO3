@@ -37,7 +37,15 @@ public class Controller {
         fields[22] = new GUI_Street("Vandlandet", "M5", "Svøm", "1", Color.blue, Color.white);
         fields[23] = new GUI_Street("Strandpromenaden", "M5", "Strand", "1", Color.blue, Color.white);
 
-
         GUI gui = new GUI(fields);
+
+
+        GUI_Car car1 = new GUI_Car(Color.red, Color.black, GUI_Car.Type.CAR, GUI_Car.Pattern.HORIZONTAL_GRADIANT);
+        GUI_Player player1 = new GUI_Player("Spiller 1", 20, car1);
+        gui.addPlayer(player1);
+
+        GUI_Car car2 = new GUI_Car(Color.blue, Color.white, GUI_Car.Type.RACECAR, GUI_Car.Pattern.DIAGONAL_DUAL_COLOR);
+        GUI_Player player2 = new GUI_Player("Spiller 2", 20, car2);
+        gui.addPlayer(player2);
     }
 }
