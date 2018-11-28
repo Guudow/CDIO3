@@ -3,6 +3,7 @@ package Game;
 public class Field {
 
     private String name;
+    private String owner;
     private int series;
     private int price;
     private boolean isJail;
@@ -10,12 +11,13 @@ public class Field {
     private boolean owned;
     private boolean isPurchaseable;
 
-    public Field(String name,int series,int price, boolean owned)
+    public Field(String name,String owner,int series,int price, boolean owned)
     {
         this.name = name;
         this.series = series;
         this.price = price;
         this.owned = owned;
+        this.owner = owner;
 
     }
 
@@ -48,6 +50,10 @@ public class Field {
     }
 
     public boolean getOwned(){return owned;}
+
+    public void setOwner(String owner){this.owner = owner;}
+
+    public String getOwner(){return owner;}
 
     public String toString()
     {

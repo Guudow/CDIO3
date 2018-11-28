@@ -7,7 +7,7 @@ public class Player {
     private Account account;
     private boolean jailed;
 
-    public Player(int numPlayers, int playerNumber)
+    public Player(int numPlayers, int playerNumber,)
     {
         jailed = false;
         position = 0;
