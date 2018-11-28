@@ -17,6 +17,14 @@ public class GameLogic {
 
     }
 */
+    public void findOwner(Player [] player, Field field){
+        for (int i = 0; i <= player.length; i++){
+            if (field.getOwner() == player.getPlayerNumber()){
+                player.setOwner(true);
+            }
+        }
+    }
+
     public void purchaseProperty(Field field, Player player)
     {
         if (field.getOwned()==false) {
@@ -27,19 +35,26 @@ public class GameLogic {
     }
     //payRent subtracts the price of the proberty from the renters account
     // and then add that amount to the proberty owners account.
-    public void payRent(Field field, Player renter, Player owner) {
-        if (field.getOwned() == true) {
-
+    public void payRent(Field field, Player renter, Player [] owner) {
+        if (field.getOwned() == true){
             renter.setMoney(renter.getMoney() - field.getPrice());
+        for (int i = 0; i <= owner.length-1; i++) {
+            if (owner.getOwner()==true){
             owner.setMoney(owner.getMoney() + field.getPrice());
+
+            }
         }
+     }
     }
     //paydoubleRent substracts two times the price of the proberty from the renters account
     // and then add that amount to the proberty owners account.
-    public void paydoubleRent(Field field, Player renter, Player owner) {
-        if (field.getOwned() == true) {
-            renter.setMoney(renter.getMoney() - (field.getPrice() + field.getPrice()));
-            owner.setMoney(owner.getMoney() + (field.getPrice() + field.getPrice()));
+    public void paydoubleRent(Field field, Player renter, Player [] owner) {
+        if (field.getOwned() == true){
+            renter.setMoney(renter.getMoney() - (field.getPrice()+field.getPrice()));
+            for (int i = 0; i <= owner.length-1; i++) {
+                if (owner.getOwner()==true){
+                    owner.setMoney(owner.getMoney() + (field.getPrice()+field.getPrice()));}
+            }
         }
     }
     // sets jailed to true and moves player to jail field(6)

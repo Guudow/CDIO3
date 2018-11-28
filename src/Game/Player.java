@@ -4,8 +4,11 @@ public class Player {
 
     private int position = 0;
     private int playerNumber;
+    private int numPlayers;
     private Account account;
     private boolean jailed;
+    private boolean owner;
+
 
     public Player(int numPlayers, int playerNumber)
     {
@@ -13,6 +16,8 @@ public class Player {
         position = 0;
         this.playerNumber = playerNumber;
         account = new Account();
+        this.numPlayers = numPlayers;
+        owner = false;
 
         if (numPlayers == 2)
         {
@@ -48,6 +53,12 @@ public class Player {
     }
 
     public int getPlayerNumber(){return playerNumber;}
+
+    public int getNumPlayers(){return numPlayers;}
+
+    public void setOwner(boolean owner){this.owner = owner;}
+
+    public boolean getOwner(){return owner;}
 
     public void setPosition(int position)
     {
