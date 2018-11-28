@@ -6,6 +6,6 @@ public class Game {
 
     public static void main(String[] args) {
         Controller controller = new Controller();
-        controller.initializeGUI(4);
+        controller.initializeGUI(2);
     }
 }
