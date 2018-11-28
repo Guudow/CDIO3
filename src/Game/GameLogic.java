@@ -19,8 +19,7 @@ public class GameLogic {
 */
     public void purchaseProperty(Field field, Player player)
     {
-        if (field.getOwned()==false)
-        {
+        if (field.getOwned()==false) {
             field.purchaseProperty(true);
             player.setMoney(player.getMoney()-field.getPrice());
         }
@@ -39,7 +38,16 @@ public class GameLogic {
         renter.setMoney(renter.getMoney()-(field.getPrice()+field.getPrice()));
         owner.setMoney(owner.getMoney()+(field.getPrice()+field.getPrice()));
     }
-    public void gotoJail(Player player){
-
+    // sets jailed to true and moves player to jail field(6)
+    public void toJail(Player player){
+        player.setJailed(true);
+        player.setPosition(6);
     }
+    // if jailed is true player pays a fee of 1.
+    public void outJail(Player player){
+        if (player.getJailed()==true){
+            player.setMoney(player.getMoney()-1);
+        }
+    }
+
 }

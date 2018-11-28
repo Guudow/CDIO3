@@ -15,7 +15,7 @@ public class GameBoard {
         fieldArray[3] = new Field("Chance", false, true);
         fieldArray[4] = new Field("Slikbutikken", 2,1, false);
         fieldArray[5] = new Field("Iskiosken", 2,1, false);
-        fieldArray[6] = new Field("I fængsel", true);
+        fieldArray[6] = new Field("På besøg i fængsel",false, false);
         fieldArray[7] = new Field("Museet", 3,2, false);
         fieldArray[8] = new Field("Biblioteket", 3,2, false);
         fieldArray[9] = new Field("Chance", false, true);
