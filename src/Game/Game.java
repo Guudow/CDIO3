@@ -14,10 +14,11 @@ public class Game {
 
         System.out.println("Vælg antal spillere:");
 
-        int playercount = scanner.nextInt();
+
 
         while (true)
         {
+            int playercount = scanner.nextInt();
             if (playercount == 2)
             {
                 numPlayers = 2;
@@ -45,6 +46,7 @@ public class Game {
             else
             {
                 System.out.println("Ugyldigt input");
+
             }
         }
         Controller controller = new Controller(numPlayers);
