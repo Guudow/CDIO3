@@ -44,6 +44,8 @@ public class Field {
         return price;
     }
 
+    public boolean getOwned(){return owned;}
+
     public String toString()
     {
         return name + ", " + price + ", " + isJail + ", " + isChance + ", " + owned + ", " + isPurchaseable;
