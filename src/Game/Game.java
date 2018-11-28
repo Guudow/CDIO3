@@ -2,10 +2,51 @@ package Game;
 
 import controller.Controller;
 
+import java.util.Scanner;
+
 public class Game {
 
     public static void main(String[] args) {
+        int numPlayers = 0;
+
+        Scanner scanner = new Scanner(System.in);
+
+
+        System.out.println("Vælg antal spillere:");
+
+        while (true)
+        {
+            if (scanner.nextInt() == 2)
+            {
+                numPlayers = 2;
+                Player player1 = new Player(numPlayers, 1);
+                Player player2 = new Player(numPlayers, 2);
+                break;
+            }
+            else if (scanner.nextInt() == 3)
+            {
+                numPlayers = 3;
+                Player player1 = new Player(numPlayers, 1);
+                Player player2 = new Player(numPlayers, 2);
+                Player player3 = new Player(numPlayers, 3);
+                break;
+            }
+            else if (scanner.nextInt() == 4)
+            {
+                numPlayers = 4;
+                Player player1 = new Player(numPlayers, 1);
+                Player player2 = new Player(numPlayers, 2);
+                Player player3 = new Player(numPlayers, 3);
+                Player player4 = new Player(numPlayers, 4);
+                break;
+            }
+            else
+            {
+                System.out.println("Ugyldigt input");
+            }
+        }
         Controller controller = new Controller();
-        controller.initializeGUI(2);
+        controller.initializeGUI(numPlayers);
+
     }
 }

@@ -94,5 +94,8 @@ public class Controller {
             fields[0].setCar(player3, true);
             fields[0].setCar(player4, true);
         }
+
     }
+
+
 }

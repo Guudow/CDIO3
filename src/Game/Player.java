@@ -2,7 +2,7 @@ package Game;
 
 public class Player {
 
-    private int position;
+    private int position = 0;
     private int playerNumber;
     private Account account;
     private boolean jailed;
