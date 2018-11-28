@@ -42,6 +42,13 @@ public class Field {
     public void purchaseProperty(boolean owned)
     {
         this.owned = owned;
+
+    }
+
+    public void payrent(Field field, Player player){
+        if(owned=true){
+
+        }
     }
 
     public int getPrice()

@@ -14,16 +14,18 @@ public class Game {
 
         System.out.println("Vælg antal spillere:");
 
+        int playercount = scanner.nextInt();
+
         while (true)
         {
-            if (scanner.nextInt() == 2)
+            if (playercount == 2)
             {
                 numPlayers = 2;
                 Player player1 = new Player(numPlayers, 1);
                 Player player2 = new Player(numPlayers, 2);
                 break;
             }
-            else if (scanner.nextInt() == 3)
+            else if (playercount == 3)
             {
                 numPlayers = 3;
                 Player player1 = new Player(numPlayers, 1);
@@ -31,7 +33,7 @@ public class Game {
                 Player player3 = new Player(numPlayers, 3);
                 break;
             }
-            else if (scanner.nextInt() == 4)
+            else if (playercount == 4)
             {
                 numPlayers = 4;
                 Player player1 = new Player(numPlayers, 1);
