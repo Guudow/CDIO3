@@ -25,4 +25,9 @@ public class GameLogic {
             player.setMoney(-field.getPrice());
         }
     }
+    public void payRent(Field field, Player renter, Player owner){
+        renter.setMoney(renter.getMoney()-field.getPrice());
+        owner.setMoney(owner.getMoney()+field.getPrice());
+    }
+
 }
