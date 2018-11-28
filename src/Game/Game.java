@@ -8,6 +8,7 @@ public class Game {
 
     public static void main(String[] args) {
         int numPlayers = 0;
+        Player[] playerArray;
 
         Scanner scanner = new Scanner(System.in);
 
@@ -24,6 +25,10 @@ public class Game {
                 numPlayers = 2;
                 Player player1 = new Player(numPlayers, 1);
                 Player player2 = new Player(numPlayers, 2);
+
+                playerArray = new Player[2];
+                playerArray[0] = player1;
+                playerArray[1] = player2;
                 break;
             }
             else if (playercount == 3)
@@ -32,6 +37,11 @@ public class Game {
                 Player player1 = new Player(numPlayers, 1);
                 Player player2 = new Player(numPlayers, 2);
                 Player player3 = new Player(numPlayers, 3);
+
+                playerArray = new Player[3];
+                playerArray[0] = player1;
+                playerArray[1] = player2;
+                playerArray[2] = player3;
                 break;
             }
             else if (playercount == 4)
@@ -41,6 +51,12 @@ public class Game {
                 Player player2 = new Player(numPlayers, 2);
                 Player player3 = new Player(numPlayers, 3);
                 Player player4 = new Player(numPlayers, 4);
+
+                playerArray = new Player[4];
+                playerArray[0] = player1;
+                playerArray[1] = player2;
+                playerArray[2] = player3;
+                playerArray[3] = player4;
                 break;
             }
             else
@@ -50,6 +66,22 @@ public class Game {
             }
         }
         Controller controller = new Controller(numPlayers);
+        GameBoard gameBoard = new GameBoard();
+        GameLogic gameLogic = new GameLogic();
+
+
+
+        for (int turn = 0; turn < numPlayers; turn++)
+        {
+            controller.removePlayer(playerArray[turn].getPosition(), turn);
+            gameLogic.movePlayer(playerArray[turn]);
+            controller.setPlayerPosition(playerArray[turn].getPosition(), turn);
+
+
+            turn = 0;
+        }
+
+
 
     }
 }

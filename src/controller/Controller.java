@@ -8,10 +8,12 @@ import java.awt.*;
 
 public class Controller {
     GUI gui;
+    GUI_Field[] fields;
+    GUI_Player[] guiPlayerArray;
 
     public Controller(int numPlayers)
     {
-        GUI_Field[] fields = new GUI_Field[24];
+        fields = new GUI_Field[24];
 
         fields[0] = new GUI_Start("Start", "", "Start her", Color.blue, Color.red);
         fields[1] = new GUI_Street("Burgerbaren", "M1", "Køb burger", "1", Color.red, Color.white);
@@ -52,22 +54,31 @@ public class Controller {
             GUI_Player player2 = new GUI_Player("Spiller 2", 20, car2);
             gui.addPlayer(player2);
 
+            guiPlayerArray = new GUI_Player[2];
+            guiPlayerArray[0] = player1;
+            guiPlayerArray[1] = player2;
+
             fields[0].setCar(player1, true);
             fields[0].setCar(player2, true);
         }
         else if (numPlayers == 3)
         {
             GUI_Car car1 = new GUI_Car(Color.red, Color.black, GUI_Car.Type.CAR, GUI_Car.Pattern.HORIZONTAL_GRADIANT);
-            GUI_Player player1 = new GUI_Player("Spiller 1", 20, car1);
+            GUI_Player player1 = new GUI_Player("Spiller 1", 18, car1);
             gui.addPlayer(player1);
 
             GUI_Car car2 = new GUI_Car(Color.blue, Color.white, GUI_Car.Type.RACECAR, GUI_Car.Pattern.DIAGONAL_DUAL_COLOR);
-            GUI_Player player2 = new GUI_Player("Spiller 2", 20, car2);
+            GUI_Player player2 = new GUI_Player("Spiller 2", 18, car2);
             gui.addPlayer(player2);
 
             GUI_Car car3 = new GUI_Car(Color.yellow, Color.magenta, GUI_Car.Type.UFO, GUI_Car.Pattern.ZEBRA);
-            GUI_Player player3 = new GUI_Player("Spiller 3", 20, car3);
+            GUI_Player player3 = new GUI_Player("Spiller 3", 18, car3);
             gui.addPlayer(player3);
+
+            guiPlayerArray = new GUI_Player[3];
+            guiPlayerArray[0] = player1;
+            guiPlayerArray[1] = player2;
+            guiPlayerArray[2] = player3;
 
             fields[0].setCar(player1, true);
             fields[0].setCar(player2, true);
@@ -76,20 +87,26 @@ public class Controller {
         else if (numPlayers == 4)
         {
             GUI_Car car1 = new GUI_Car(Color.red, Color.black, GUI_Car.Type.CAR, GUI_Car.Pattern.HORIZONTAL_GRADIANT);
-            GUI_Player player1 = new GUI_Player("Spiller 1", 20, car1);
+            GUI_Player player1 = new GUI_Player("Spiller 1", 16, car1);
             gui.addPlayer(player1);
 
             GUI_Car car2 = new GUI_Car(Color.blue, Color.white, GUI_Car.Type.RACECAR, GUI_Car.Pattern.DIAGONAL_DUAL_COLOR);
-            GUI_Player player2 = new GUI_Player("Spiller 2", 20, car2);
+            GUI_Player player2 = new GUI_Player("Spiller 2", 16, car2);
             gui.addPlayer(player2);
 
             GUI_Car car3 = new GUI_Car(Color.yellow, Color.magenta, GUI_Car.Type.UFO, GUI_Car.Pattern.ZEBRA);
-            GUI_Player player3 = new GUI_Player("Spiller 3", 20, car3);
+            GUI_Player player3 = new GUI_Player("Spiller 3", 16, car3);
             gui.addPlayer(player3);
 
             GUI_Car car4 = new GUI_Car(Color.green, Color.red, GUI_Car.Type.TRACTOR, GUI_Car.Pattern.HORIZONTAL_LINE);
-            GUI_Player player4 = new GUI_Player("Spiller 4", 20, car4);
+            GUI_Player player4 = new GUI_Player("Spiller 4", 16, car4);
             gui.addPlayer(player4);
+
+            guiPlayerArray = new GUI_Player[4];
+            guiPlayerArray[0] = player1;
+            guiPlayerArray[1] = player2;
+            guiPlayerArray[2] = player3;
+            guiPlayerArray[3] = player4;
 
             fields[0].setCar(player1, true);
             fields[0].setCar(player2, true);
@@ -102,6 +119,16 @@ public class Controller {
     public String dicePrompt()
     {
         return gui.getUserButtonPressed("1", "Kast Terning");
+    }
+
+    public void setPlayerPosition(int position, int playerNumber)
+    {
+        fields[position].setCar(guiPlayerArray[playerNumber], true);
+    }
+
+    public void removePlayer(int position, int playerNumber)
+    {
+        fields[position].setCar(guiPlayerArray[playerNumber], false);
     }
 
 }
