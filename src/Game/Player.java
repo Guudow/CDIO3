@@ -47,10 +47,9 @@ public class Player {
         return position;
     }
 
-    public void setPosition(int position)
-
     public int getPlayerNumber(){return playerNumber;}
 
+    public void setPosition(int position)
     {
         this.position += position;
         if (position > 23)
