@@ -18,9 +18,9 @@ public class GameLogic {
     }
 */
     public void findOwner(Player [] player, Field field){
-        for (int i = 0; i <= player.length; i++){
-            if (field.getOwner() == player.getPlayerNumber()){
-                player.setOwner(true);
+        for (int i = 0; i < player.length; i++){
+            if (field.getOwner() == player[i].getPlayerNumber()){
+                player[i].setOwner(true);
             }
         }
     }
@@ -38,9 +38,9 @@ public class GameLogic {
     public void payRent(Field field, Player renter, Player [] owner) {
         if (field.getOwned() == true){
             renter.setMoney(renter.getMoney() - field.getPrice());
-        for (int i = 0; i <= owner.length-1; i++) {
-            if (owner.getOwner()==true){
-            owner.setMoney(owner.getMoney() + field.getPrice());
+        for (int i = 0; i < owner.length; i++) {
+            if (owner[i].getOwner()==true){
+            owner[i].setMoney(owner[i].getMoney() + field.getPrice());
 
             }
         }
@@ -51,9 +51,9 @@ public class GameLogic {
     public void paydoubleRent(Field field, Player renter, Player [] owner) {
         if (field.getOwned() == true){
             renter.setMoney(renter.getMoney() - (field.getPrice()+field.getPrice()));
-            for (int i = 0; i <= owner.length-1; i++) {
-                if (owner.getOwner()==true){
-                    owner.setMoney(owner.getMoney() + (field.getPrice()+field.getPrice()));}
+            for (int i = 0; i < owner.length; i++) {
+                if (owner[i].getOwner()==true){
+                    owner[i].setMoney(owner[i].getMoney() + (field.getPrice()+field.getPrice()));}
             }
         }
     }

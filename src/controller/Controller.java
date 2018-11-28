@@ -7,8 +7,9 @@ import gui_main.GUI;
 import java.awt.*;
 
 public class Controller {
+    GUI gui;
 
-    public void initializeGUI(int numPlayers)
+    public Controller(int numPlayers)
     {
         GUI_Field[] fields = new GUI_Field[24];
 
@@ -38,6 +39,7 @@ public class Controller {
         fields[23] = new GUI_Street("Strandpromenaden", "M5", "Strand", "1", Color.blue, Color.white);
 
         GUI gui = new GUI(fields);
+        this.gui = gui;
 
 
         if (numPlayers == 2)
@@ -97,5 +99,9 @@ public class Controller {
 
     }
 
+    public String dicePrompt()
+    {
+        return gui.getUserButtonPressed("1", "Kast Terning");
+    }
 
 }

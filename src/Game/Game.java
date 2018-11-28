@@ -45,8 +45,7 @@ public class Game {
                 System.out.println("Ugyldigt input");
             }
         }
-        Controller controller = new Controller();
-        controller.initializeGUI(numPlayers);
+        Controller controller = new Controller(numPlayers);
 
     }
 }
