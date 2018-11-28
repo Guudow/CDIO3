@@ -22,12 +22,15 @@ public class GameLogic {
         if (field.isPurchaseable())
         {
             field.purchaseProperty(true);
-            player.setMoney(-field.getPrice());
+            player.setMoney(player.getMoney()-field.getPrice());
         }
     }
     public void payRent(Field field, Player renter, Player owner){
         renter.setMoney(renter.getMoney()-field.getPrice());
         owner.setMoney(owner.getMoney()+field.getPrice());
     }
-
+    public void paydoubleRent(Field field, Player renter, Player owner){
+        renter.setMoney(renter.getMoney()-(field.getPrice()+field.getPrice()));
+        owner.setMoney(owner.getMoney()+(field.getPrice()+field.getPrice()));
+    }
 }
