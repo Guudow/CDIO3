@@ -11,7 +11,7 @@ public class Field {
     private boolean owned;
     private boolean isPurchaseable;
 
-    public Field(String name,String owner,int series,int price, boolean owned)
+    public Field(String name,int series,int price, boolean owned)
     {
         this.name = name;
         this.series = series;
