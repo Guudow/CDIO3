@@ -19,7 +19,7 @@ public class GameLogic {
 */
     public void purchaseProperty(Field field, Player player)
     {
-        if (field.isPurchaseable())
+        if (field.getOwned()==false)
         {
             field.purchaseProperty(true);
             player.setMoney(player.getMoney()-field.getPrice());
@@ -39,7 +39,7 @@ public class GameLogic {
         renter.setMoney(renter.getMoney()-(field.getPrice()+field.getPrice()));
         owner.setMoney(owner.getMoney()+(field.getPrice()+field.getPrice()));
     }
-    public void gotoJail(Field field, Player player){
+    public void gotoJail(Player player){
 
     }
 }

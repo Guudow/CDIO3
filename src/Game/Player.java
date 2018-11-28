@@ -5,9 +5,11 @@ public class Player {
     private int position;
     private int playerNumber;
     private Account account;
+    private boolean jailed;
 
     public Player(int numPlayers, int playerNumber)
     {
+        jailed = false;
         position = 0;
         this.playerNumber = playerNumber;
         account = new Account();
@@ -25,6 +27,10 @@ public class Player {
             account.setMoney(16);
         }
     }
+
+    public void setJailed(boolean jailed){this.jailed = jailed;}
+
+    public boolean getJailed(){return jailed;}
 
     public void setMoney(int amount)
     {

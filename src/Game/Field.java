@@ -3,17 +3,20 @@ package Game;
 public class Field {
 
     private String name;
+    private int series;
     private int price;
     private boolean isJail;
     private boolean isChance;
     private boolean owned;
     private boolean isPurchaseable;
 
-    public Field(String name, int price, boolean owned)
+    public Field(String name,int series,int price, boolean owned)
     {
         this.name = name;
+        this.series = series;
         this.price = price;
         this.owned = owned;
+
     }
 
     public Field(String name, boolean isPurchaseable, boolean isChance)
