@@ -47,11 +47,6 @@ public class Player {
         return account.getMoney();
     }
 
-    public int getPosition()
-    {
-        return position;
-    }
-
     public int getPlayerNumber(){return playerNumber;}
 
     public int getNumPlayers(){return numPlayers;}
@@ -62,10 +57,25 @@ public class Player {
 
     public void setPosition(int position)
     {
-        this.position += position;
-        if (position > 23)
+        if (position < 23)
         {
-            this.position = position - 23;
+            this.position += position;
+
+        } else {
+            this.position = position-24;
         }
+    }
+
+    public int getPosition()
+    {
+        if (position < 23)
+        {
+            return position;
+
+        } else {
+            position = 0;
+            return position;
+        }
+
     }
 }
