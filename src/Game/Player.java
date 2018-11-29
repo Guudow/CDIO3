@@ -65,7 +65,7 @@ public class Player {
         this.position += position;
         if (position > 23)
         {
-            this.position = position - 23;
+            this.position = this.position - 24;
         }
     }
 }

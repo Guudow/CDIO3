@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Game {
 
     public static void main(String[] args) {
+        boolean winner = false;
         int numPlayers = 0;
         Player[] playerArray;
 
@@ -71,17 +72,18 @@ public class Game {
 
 
 
-        for (int turn = 0; turn < numPlayers; turn++)
+        for (int turn = 0; turn < numPlayers + 1; turn++)
         {
+            if (turn == numPlayers && winner == false)
+            {
+                turn = 0;
+            }
+
             controller.removePlayer(playerArray[turn].getPosition(), turn);
             gameLogic.movePlayer(playerArray[turn]);
             controller.setPlayerPosition(playerArray[turn].getPosition(), turn);
 
 
-            if (turn < numPlayers)
-            {
-                turn = 0;
-            }
         }
 
 
