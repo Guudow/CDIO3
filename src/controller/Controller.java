@@ -1,5 +1,8 @@
 package controller;
 
+import Game.GameBoard;
+import Game.GameLogic;
+import Game.Player;
 import gui_fields.*;
 import gui_main.GUI;
 
@@ -10,6 +13,9 @@ public class Controller {
     GUI_Field[] fields;
     GUI_Player[] guiPlayerArray;
     int numPlayers;
+    Player[] playerArray;
+    GameBoard gameBoard = new GameBoard();
+    GameLogic gameLogic = new GameLogic();
 
     public Controller()
     {
@@ -19,6 +25,8 @@ public class Controller {
         this.gui = gui;
 
         /*Player chooses the amount of things that he or she can do*/
+
+
                 int tempplayercount = gui.getUserInteger("indtast antal spillere");
                 while (true) {
 
@@ -31,7 +39,37 @@ public class Controller {
                 }
                 amountplay();
 
-                /*game can begin*/
+
+
+                //game while loop
+
+        int turn=0;
+
+        while(turn<=numPlayers-1){
+
+            int playrturn= turn+1;
+            //chooses which players turn it is. and throws dice
+
+            gui.getUserButtonPressed("spiller:"+playrturn+"  skal rulle","rul");
+            removePlayer(playerArray[turn].getPosition(), turn);
+            gameLogic.movePlayer(playerArray[turn]);
+            setPlayerPosition(playerArray[turn].getPosition(), turn);
+
+            //player should be able to purchase property
+
+
+            //we need to check for the winner.
+
+
+            //when the players turn is over
+            turn++;
+
+            if(turn > numPlayers-1){
+                turn=0;
+            }
+
+
+        }
 
 
 
@@ -58,6 +96,9 @@ public class Controller {
 
         if (numPlayers == 2)
         {
+
+            //gui aspects
+
             GUI_Car car1 = new GUI_Car(Color.red, Color.black, GUI_Car.Type.CAR, GUI_Car.Pattern.HORIZONTAL_GRADIANT);
             GUI_Player player1 = new GUI_Player("Spiller 1", 20, car1);
             gui.addPlayer(player1);
@@ -72,9 +113,21 @@ public class Controller {
 
             fields[0].setCar(player1, true);
             fields[0].setCar(player2, true);
+
+            //player aspects
+            Player player11 = new Player(numPlayers, 1);
+            Player player22 = new Player(numPlayers, 2);
+
+            playerArray = new Player[2];
+            playerArray[0] = player11;
+            playerArray[1] = player22;
+
+
+
         }
         else if (numPlayers == 3)
         {
+            //gui aspects
             GUI_Car car1 = new GUI_Car(Color.red, Color.black, GUI_Car.Type.CAR, GUI_Car.Pattern.HORIZONTAL_GRADIANT);
             GUI_Player player1 = new GUI_Player("Spiller 1", 18, car1);
             gui.addPlayer(player1);
@@ -95,9 +148,22 @@ public class Controller {
             fields[0].setCar(player1, true);
             fields[0].setCar(player2, true);
             fields[0].setCar(player3, true);
+
+            //player aspects
+            Player player11 = new Player(numPlayers, 1);
+            Player player22 = new Player(numPlayers, 2);
+            Player player33 = new Player(numPlayers, 3);
+
+            playerArray = new Player[3];
+            playerArray[0] = player11;
+            playerArray[1] = player22;
+            playerArray[2] = player33;
+
+
         }
         else if (numPlayers == 4)
         {
+            //gui aspects
             GUI_Car car1 = new GUI_Car(Color.red, Color.black, GUI_Car.Type.CAR, GUI_Car.Pattern.HORIZONTAL_GRADIANT);
             GUI_Player player1 = new GUI_Player("Spiller 1", 16, car1);
             gui.addPlayer(player1);
@@ -124,6 +190,20 @@ public class Controller {
             fields[0].setCar(player2, true);
             fields[0].setCar(player3, true);
             fields[0].setCar(player4, true);
+
+
+            //player aspects
+
+            Player player11 = new Player(numPlayers, 1);
+            Player player22 = new Player(numPlayers, 2);
+            Player player33 = new Player(numPlayers, 3);
+            Player player44 = new Player(numPlayers, 4);
+
+            playerArray = new Player[4];
+            playerArray[0] = player11;
+            playerArray[1] = player22;
+            playerArray[2] = player33;
+            playerArray[3] = player44;
         }
 
     }

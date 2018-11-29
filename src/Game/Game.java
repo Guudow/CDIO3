@@ -22,7 +22,7 @@ public class Game {
         GameBoard gameBoard = new GameBoard();
         GameLogic gameLogic = new GameLogic();
 
-        while(true) {
+        /*while(true) {
 
             if (playercount == 2) {
                 numPlayers = 2;
@@ -67,8 +67,7 @@ public class Game {
 
         //try to create a loop that runs the game automatically
         int turn = 0;
-                   while (turn < playercount)
-                    {
+
                             controller.removePlayer(playerArray[turn].getPosition(), turn);
                             gameLogic.movePlayer(playerArray[turn]);
                             controller.setPlayerPosition(playerArray[turn].getPosition(), turn);
@@ -77,12 +76,18 @@ public class Game {
                                     turn=0;
                             }
                             turn++;
-                    }
-
-        //tester hvordan det virker
 
 
-    }}
+        //tester hvordan det virker*/
+
+
+    }
+
+
+
+
+
+}
 
 
 
