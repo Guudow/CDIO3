@@ -78,7 +78,10 @@ public class Game {
             controller.setPlayerPosition(playerArray[turn].getPosition(), turn);
 
 
-            turn = 0;
+            if (turn < numPlayers)
+            {
+                turn = 0;
+            }
         }
 
 
