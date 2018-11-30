@@ -51,7 +51,7 @@ public class GameLogic {
         if (field.getOwned() == true){
             renter.setMoney(renter.getMoney() - (field.getPrice()+field.getPrice()));
             for (int i = 0; i < owner.length; i++) {
-                if (owner[i].getOwner()==true){
+                if (field.getOwner()==owner[i].getPlayerNumber()){
                     owner[i].setMoney(owner[i].getMoney() + (field.getPrice()+field.getPrice()));}
             }
         }
