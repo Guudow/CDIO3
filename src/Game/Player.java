@@ -63,7 +63,7 @@ public class Player {
     public void setPosition(int position)
     {
         this.position += position;
-        if (position > 23)
+        if (this.position > 23)
         {
             this.position = this.position - 24;
         }
