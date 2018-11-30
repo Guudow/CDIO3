@@ -21,6 +21,9 @@ public class Game {
         while (true)
         {
             int playercount= controller.getNumPlayers();
+
+
+
             if (playercount == 2)
             {
                 numPlayers = 2;

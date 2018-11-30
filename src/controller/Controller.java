@@ -62,7 +62,15 @@ public class Controller {
 
     public void amountOfPlayers(){
 
-        numPlayers=gui.getUserInteger("indtast antal spilere",2,4);
+        int tempplayercount=gui.getUserInteger("indtast antal spilere",2,4);
+        while (true) {
+            if (tempplayercount < 2 || tempplayercount > 4) {
+                tempplayercount = gui.getUserInteger("Der skal være mellem 2-4 spillere",2,4);;
+            } else {
+                numPlayers = tempplayercount;
+                break;
+            }
+        }
 
         if (numPlayers == 2)
         {
