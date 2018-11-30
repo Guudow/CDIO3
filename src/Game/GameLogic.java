@@ -36,10 +36,10 @@ public class GameLogic {
     // and then add that amount to the proberty owners account.
     public void payRent(Field field, Player renter, Player [] owner) {
         if (field.getOwned() == true){
-            renter.setMoney(renter.getMoney() - field.getPrice());
+            renter.setMoney(-field.getPrice());
         for (int i = 0; i < owner.length; i++) {
             if (field.getOwner()== owner[i].getPlayerNumber()){
-            owner[i].setMoney(owner[i].getMoney() + field.getPrice());
+            owner[i].setMoney(field.getPrice());
 
             }
         }
@@ -49,10 +49,10 @@ public class GameLogic {
     // and then add that amount to the proberty owners account.
     public void paydoubleRent(Field field, Player renter, Player [] owner) {
         if (field.getOwned() == true){
-            renter.setMoney(renter.getMoney() - (field.getPrice()+field.getPrice()));
+            renter.setMoney(-(field.getPrice()+field.getPrice()));
             for (int i = 0; i < owner.length; i++) {
                 if (field.getOwner()==owner[i].getPlayerNumber()){
-                    owner[i].setMoney(owner[i].getMoney() + (field.getPrice()+field.getPrice()));}
+                    owner[i].setMoney((field.getPrice()+field.getPrice()));}
             }
         }
     }
