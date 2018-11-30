@@ -4,6 +4,7 @@ import controller.Controller;
 
 import java.util.Scanner;
 
+//Initializes the game and contains the game loop.
 public class Game {
 
     public static void main(String[] args) {

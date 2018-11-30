@@ -1,5 +1,6 @@
 package Game;
 
+//The Field class represents the games fields logically.
 public class Field {
 
     private String name;

@@ -1,5 +1,8 @@
 package Game;
 
+
+//The Account class keeps track of a players money.
+
 public class Account{
 
     //int for amount of money in account

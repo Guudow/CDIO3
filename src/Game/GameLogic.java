@@ -1,5 +1,6 @@
 package Game;
 
+//Contains the games rules.
 public class GameLogic {
 
     private Dice dice = new Dice(6);

@@ -7,6 +7,9 @@ import gui_main.GUI;
 
 import java.awt.*;
 
+
+//The controller class passes information from the game to the GUI.
+
 public class Controller {
     GUI gui;
     GUI_Field[] fields;

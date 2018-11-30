@@ -1,5 +1,6 @@
 package Game;
 
+//Dice class to set the Players position.
 public class Dice {
 
     private int sides;

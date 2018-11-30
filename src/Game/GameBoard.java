@@ -1,5 +1,6 @@
 package Game;
 
+//Initializes the Fields and keeps track of them.
 public class GameBoard {
 
     private int fields = 24;

@@ -1,5 +1,6 @@
 package Game;
 
+//Contains information about the player and initializes Account.
 public class Player {
 
     private int position = 0;
