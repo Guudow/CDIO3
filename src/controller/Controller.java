@@ -134,6 +134,15 @@ public class Controller {
 
     }
 
+    public int getPlayerBalance(int playerNumber)
+    {
+        return guiPlayerArray[playerNumber].getBalance();
+    }
+
+    public void setPlayerBalance(int money, int playerNumber)
+    {
+        guiPlayerArray[playerNumber].setBalance(money);
+    }
 
     public void setPlayerPosition(int position, int playerNumber)
     {

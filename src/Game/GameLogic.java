@@ -28,7 +28,7 @@ public class GameLogic {
     {
         if (field.getOwned()==false) {
             field.purchaseProperty(true);
-            player.setMoney(player.getMoney()-field.getPrice());
+            player.setMoney(-field.getPrice());
             field.setOwner(player.getPlayerNumber());
         }
     }

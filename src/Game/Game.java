@@ -94,6 +94,7 @@ public class Game {
                 gameLogic.payRent(currentfield,playerArray[turn],playerArray);
             }
 
+            controller.setPlayerBalance(playerArray[turn].getMoney(), turn);
 
         }
 
