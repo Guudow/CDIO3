@@ -69,6 +69,7 @@ public class GameLogic {
     // if jailed is true player pays a fee of 1.
     public void outJail(Player player){
         if (player.getJailed()==true){
+            player.setJailed(false);
             player.setMoney(player.getMoney()-1);
         }
     }
