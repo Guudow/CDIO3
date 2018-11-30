@@ -40,6 +40,10 @@ public class Player {
     public void setMoney(int amount)
     {
         account.setMoney(amount);
+        if (account.getMoney() < 0)
+        {
+            account.setMoney(0);
+        }
     }
 
     public int getMoney()
