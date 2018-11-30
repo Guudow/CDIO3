@@ -5,6 +5,7 @@ public class GameBoard {
     private int fields = 24;
     Field[] fieldArray;
 
+
     public GameBoard()
     {
         fieldArray = new Field[24];
@@ -39,6 +40,10 @@ public class GameBoard {
         fieldArray[22] = new Field("Vandlandet", 8,5, false);
         fieldArray[23] = new Field("Strandpromenaden", 8,5, false);
 
+    }
+
+    public Field getfield(int position){
+        return fieldArray[position];
     }
 
 
