@@ -96,6 +96,12 @@ public class Game {
 
             controller.setPlayerBalance(playerArray[turn].getMoney(), turn);
 
+            if (playerArray[turn].getMoney() == 0)
+            {
+                controller.printMessage(turn + 1);
+                break;
+            }
+
         }
 
 

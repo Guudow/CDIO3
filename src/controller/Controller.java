@@ -134,6 +134,11 @@ public class Controller {
 
     }
 
+    public void printMessage(int playerNumber)
+    {
+        gui.showMessage("Spiller" + playerNumber + "har vundet!");
+    }
+
     public int getPlayerBalance(int playerNumber)
     {
         return guiPlayerArray[playerNumber].getBalance();
