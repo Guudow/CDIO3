@@ -10,9 +10,12 @@ public class GameLogic {
         player.setPosition(result);
     }
 
-    /*
-    public boolean isOwned(Field field)
+
+   /*public boolean isOwned(Player [] player,Field field)
     {
+        if(){
+
+        }
 
     }*/
 
@@ -22,6 +25,7 @@ public class GameLogic {
             if (field.getOwner() == player[i].getPlayerNumber()){
                 player[i].setOwner(true);
             }
+
         }
     }
 
@@ -35,7 +39,7 @@ public class GameLogic {
     }
     //payRent subtracts the price of the proberty from the renters account
     // and then add that amount to the proberty owners account.
-    public void payRent(Field field, Player[] renter, Player [] owner) {
+    public void payRent(Field field, Player renter, Player [] owner) {
         if (field.getOwned() == true){
             renter.setMoney(renter.getMoney() - field.getPrice());
         for (int i = 0; i < owner.length; i++) {

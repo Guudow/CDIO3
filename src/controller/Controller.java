@@ -39,13 +39,10 @@ public class Controller {
                 }
                 amountplay();
 
-
-
                 //game while loop
-
         int turn=0;
 
-        while(turn<=numPlayers-1){
+        while(true){
 
             int playrturn= turn+1;
             //chooses which players turn it is. and throws dice
@@ -55,7 +52,18 @@ public class Controller {
             gameLogic.movePlayer(playerArray[turn]);
             setPlayerPosition(playerArray[turn].getPosition(), turn);
 
-            //player should be able to purchase property
+            int pos = playerArray[turn].getPosition();
+
+
+
+
+
+
+            //what type of field player landed on.
+
+            //check if property is owned;
+
+
 
 
             //we need to check for the winner.
