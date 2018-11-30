@@ -10,6 +10,7 @@ public class Controller {
     GUI gui;
     GUI_Field[] fields;
     GUI_Player[] guiPlayerArray;
+    private int numPlayers;
 
     public Controller(int numPlayers)
     {
@@ -43,6 +44,21 @@ public class Controller {
         GUI gui = new GUI(fields);
         this.gui = gui;
 
+        amountOfPlayers();
+
+
+
+
+    }
+
+    public String dicePrompt()
+    {
+        return gui.getUserButtonPressed("1", "Kast Terning");
+    }
+
+    public void amountOfPlayers(){
+
+        numPlayers=gui.getUserInteger("indtast antal spilere",2,4);
 
         if (numPlayers == 2)
         {
@@ -114,12 +130,9 @@ public class Controller {
             fields[0].setCar(player4, true);
         }
 
+
     }
 
-    public String dicePrompt()
-    {
-        return gui.getUserButtonPressed("1", "Kast Terning");
-    }
 
     public void setPlayerPosition(int position, int playerNumber)
     {
@@ -130,5 +143,11 @@ public class Controller {
     {
         fields[position].setCar(guiPlayerArray[playerNumber], false);
     }
+
+    public int getNumPlayers(){
+        return numPlayers;
+    }
+
+
 
 }

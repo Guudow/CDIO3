@@ -14,13 +14,12 @@ public class Game {
         Scanner scanner = new Scanner(System.in);
 
 
-        System.out.println("Vælg antal spillere:");
-
+        Controller controller = new Controller(numPlayers);
 
 
         while (true)
         {
-            int playercount = scanner.nextInt();
+            int playercount= controller.getNumPlayers();
             if (playercount == 2)
             {
                 numPlayers = 2;
@@ -66,7 +65,7 @@ public class Game {
 
             }
         }
-        Controller controller = new Controller(numPlayers);
+
         GameBoard gameBoard = new GameBoard();
         GameLogic gameLogic = new GameLogic();
 
