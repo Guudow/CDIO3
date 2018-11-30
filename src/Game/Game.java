@@ -79,6 +79,8 @@ public class Game {
                 turn = 0;
             }
 
+            controller.dicePrompt();
+
             controller.removePlayer(playerArray[turn].getPosition(), turn);
             gameLogic.movePlayer(playerArray[turn]);
             controller.setPlayerPosition(playerArray[turn].getPosition(), turn);
