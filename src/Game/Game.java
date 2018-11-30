@@ -84,6 +84,16 @@ public class Game {
             gameLogic.movePlayer(playerArray[turn]);
             controller.setPlayerPosition(playerArray[turn].getPosition(), turn);
 
+            int pos = playerArray[turn].getPosition();
+
+            Field currentfield= gameBoard.getfield(pos);
+
+            if(currentfield.getOwned()==false){
+                gameLogic.purchaseProperty(currentfield,playerArray[turn]);
+            } else {
+                gameLogic.payRent(currentfield,playerArray[turn],playerArray);
+            }
+
 
         }
 

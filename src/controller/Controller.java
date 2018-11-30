@@ -1,5 +1,6 @@
 package controller;
 
+import Game.Player;
 import gui_codebehind.GUI_FieldFactory;
 import gui_fields.*;
 import gui_main.GUI;
