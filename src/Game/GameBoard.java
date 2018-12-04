@@ -11,10 +11,7 @@ public class GameBoard {
     {
         fieldArray = new Field[24];
 
-        /**
-         * TO DO:
-         * Set image on fields.
-         */
+
 
         fieldArray[0] = new Field("Start", false, false);
         fieldArray[1] = new Field("Burgerbaren",1, 1, false);
