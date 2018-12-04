@@ -16,6 +16,10 @@ public class Controller {
     GUI_Player[] guiPlayerArray;
     private int numPlayers;
 
+    /**
+     *
+     * @param numPlayers
+     */
     public Controller(int numPlayers)
     {
         fields = new GUI_Field[24];
@@ -55,11 +59,19 @@ public class Controller {
 
     }
 
+    /**
+     *
+     * @return
+     */
+
     public String dicePrompt()
     {
         return gui.getUserButtonPressed("1", "Kast Terning");
     }
 
+    /**
+     *
+     */
     public void amountOfPlayers(){
 
         int tempplayercount=gui.getUserInteger("indtast antal spilere",2,4);
@@ -145,31 +157,61 @@ public class Controller {
 
     }
 
+    /**
+     *
+     * @param playerNumber
+     */
+
     public void printMessage(int playerNumber)
     {
         gui.showMessage("Spiller" + playerNumber + "har vundet!");
     }
 
+    /**
+     *
+     * @param playerNumber
+     * @return
+     */
     public int getPlayerBalance(int playerNumber)
     {
         return guiPlayerArray[playerNumber].getBalance();
     }
 
+    /**
+     *
+     * @param money
+     * @param playerNumber
+     */
     public void setPlayerBalance(int money, int playerNumber)
     {
         guiPlayerArray[playerNumber].setBalance(money);
     }
 
+    /**
+     *
+     * @param position
+     * @param playerNumber
+     */
     public void setPlayerPosition(int position, int playerNumber)
     {
         fields[position].setCar(guiPlayerArray[playerNumber], true);
     }
+
+    /**
+     *
+     * @param position
+     * @param playerNumber
+     */
 
     public void removePlayer(int position, int playerNumber)
     {
         fields[position].setCar(guiPlayerArray[playerNumber], false);
     }
 
+    /**
+     *
+     * @return
+     */
     public int getNumPlayers(){
         return numPlayers;
     }

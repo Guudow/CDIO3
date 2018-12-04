@@ -5,6 +5,11 @@ public class GameLogic {
 
     private Dice dice = new Dice(6);
 
+    /**
+     *
+     * @param player
+     */
+
     public void movePlayer(Player player)
     {
         int result = dice.roll();
@@ -17,6 +22,12 @@ public class GameLogic {
 
     }
 */
+
+    /**
+     *
+     * @param player
+     * @param field
+     */
     public void findOwner(Player [] player, Field field){
         for (int i = 0; i < player.length; i++){
             if (field.getOwner() == player[i].getPlayerNumber()){
@@ -25,6 +36,11 @@ public class GameLogic {
         }
     }
 
+    /**
+     *
+     * @param field
+     * @param player
+     */
     public void purchaseProperty(Field field, Player player)
     {
         if (field.getOwned()==false) {
@@ -35,6 +51,13 @@ public class GameLogic {
     }
     //payRent subtracts the price of the proberty from the renters account
     // and then add that amount to the proberty owners account.
+
+    /**
+     *
+     * @param field
+     * @param renter
+     * @param owner
+     */
     public void payRent(Field field, Player renter, Player [] owner) {
         if (field.getOwned() == true){
             renter.setMoney(-field.getPrice());
@@ -48,6 +71,13 @@ public class GameLogic {
     }
     //paydoubleRent substracts two times the price of the proberty from the renters account
     // and then add that amount to the proberty owners account.
+
+    /**
+     *
+     * @param field
+     * @param renter
+     * @param owner
+     */
     public void paydoubleRent(Field field, Player renter, Player [] owner) {
         if (field.getOwned() == true){
             renter.setMoney(-(field.getPrice()+field.getPrice()));
@@ -58,11 +88,21 @@ public class GameLogic {
         }
     }
     // sets jailed to true and moves player to jail field(6)
+
+    /**
+     *
+     * @param player
+     */
     public void toJail(Player player){
         player.setJailed(true);
         player.setPosition(6);
     }
     // if jailed is true player pays a fee of 1.
+
+    /**
+     *
+     * @param player
+     */
     public void outJail(Player player){
         if (player.getJailed()==true){
             player.setMoney(player.getMoney()-1);

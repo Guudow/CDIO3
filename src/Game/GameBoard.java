@@ -6,7 +6,9 @@ public class GameBoard {
     private int fields = 24;
     Field[] fieldArray;
 
-
+    /**
+     *
+     */
     public GameBoard()
     {
         fieldArray = new Field[24];
@@ -40,12 +42,22 @@ public class GameBoard {
 
     }
 
+    /**
+     *
+     * @param position
+     * @return
+     */
+
     public Field getfield(int position){
         return fieldArray[position];
     }
 
 
-
+    /**
+     *
+     * @param fieldArray
+     * @return
+     */
     public String toString(Field[] fieldArray)
     {
         String str = new String();

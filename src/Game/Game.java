@@ -7,6 +7,10 @@ import java.util.Scanner;
 //Initializes the game and contains the game loop.
 public class Game {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         boolean winner = false;
         int numPlayers = 0;

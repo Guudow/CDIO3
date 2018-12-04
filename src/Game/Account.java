@@ -3,10 +3,18 @@ package Game;
 
 //The Account class keeps track of a players money.
 
+/**
+ *
+ */
 public class Account{
 
     //int for amount of money in account
     private int money = 0;
+
+    /**
+     *
+     * @param amount
+     */
 
     public void setMoney(int amount){
         money += amount;
@@ -16,6 +24,10 @@ public class Account{
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public int getMoney(){
         return money;
     }

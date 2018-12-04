@@ -10,7 +10,11 @@ public class Player {
     private boolean jailed;
     private boolean owner;
 
-
+    /**
+     *
+     * @param numPlayers
+     * @param playerNumber
+     */
     public Player(int numPlayers, int playerNumber)
     {
         jailed = false;
@@ -34,9 +38,23 @@ public class Player {
         }
     }
 
+    /**
+     *
+     * @param jailed
+     */
     public void setJailed(boolean jailed){this.jailed = jailed;}
 
+    /**
+     *
+     * @return
+     */
+
     public boolean getJailed(){return jailed;}
+
+    /**
+     *
+     * @param amount
+     */
 
     public void setMoney(int amount)
     {
@@ -47,23 +65,56 @@ public class Player {
         }
     }
 
+    /**
+     *
+     * @return
+     */
+
     public int getMoney()
     {
         return account.getMoney();
     }
 
+    /**
+     *
+     * @return
+     */
     public int getPosition()
     {
         return position;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getPlayerNumber(){return playerNumber;}
+
+    /**
+     *
+     * @return
+     */
 
     public int getNumPlayers(){return numPlayers;}
 
+    /**
+     *
+     * @param owner
+     */
+
     public void setOwner(boolean owner){this.owner = owner;}
 
+    /**
+     *
+     * @return
+     */
+
     public boolean getOwner(){return owner;}
+
+    /**
+     *
+     * @param position
+     */
 
     public void setPosition(int position)
     {
